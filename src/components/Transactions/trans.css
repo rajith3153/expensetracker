@@ -1,0 +1,115 @@
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #d3d3d3;
+    padding: 1em;
+    margin-bottom: 1em;
+  }
+  
+  .transaction-item__date {
+    font-weight: bold;
+    margin-right: 1em;
+  }
+  
+  .transaction-item__info-wrapper {
+    flex-grow: 1;
+  }
+  
+  .transaction-item__account {
+    font-weight: bold;
+  }
+  
+  .transaction-item__tag-or-destination {
+    margin-left: 1em;
+  }
+  
+  .custom-badge {
+    margin-right: 0.5em;
+  }
+  
+  .transaction-item__edit {
+    margin-left: 1em;
+  }
+  
+  .mono {
+    font-family: monospace;
+  }
+  
+  .positive {
+    color: green;
+  }
+  
+  .negative {
+    color: red;
+  }
+  /* Styles for the date range picker modal */
+.modal {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-dialog {
+  margin-top: 150px;
+}
+
+.modal-title {
+  font-size: 24px;
+}
+
+.modal-body {
+  display: flex;
+  justify-content: center;
+}
+
+/* Styles for the form and its components */
+form {
+  margin-top: 20px;
+}
+
+.ui-form-field {
+  margin-right: 10px;
+}
+
+.container-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.form-control {
+  height: 40px;
+}
+
+.form-select {
+  height: 40px;
+}
+
+.btn {
+  height: 40px;
+}
+
+.fa-calendar {
+  color: #212529;
+  font-size: 20px;
+}
+
+.fa-plus {
+  color: #fff;
+  font-size: 18px;
+}
+
+/* Styles for the custom button */
+.custom-button {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+}
+
+.custom-button:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+.custom-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(38, 143, 255, 0.5);
+}
