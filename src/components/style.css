@@ -1,0 +1,386 @@
+.centered {
+  text-align: center;
+}
+.container-fluid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+.new-expense-container {
+  margin-right: 225px; 
+}
+.reports-container {
+  display: flex;
+  flex-direction: row;
+}
+.transfer-link {
+  text-align: center;
+}
+.income-link {
+  text-align: center ;
+}
+.expense-link {
+  text-align: center;
+}
+.nav-link {
+  color: black !important;
+}
+.link {
+  background-color: white !important;
+  color:black !important;
+}
+.custom-modal {
+  right: 0;
+}
+.transaction-item {
+  display: flex;
+  align-items: center;
+  justify-content:
+}
+.container-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.transaction-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #eee;
+}
+
+.transaction-item__date {
+  font-size: 1.2rem;
+  font-weight: 600;
+  width: 15%;
+}
+
+.transaction-item__info-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
+  margin-left: 1rem;
+}
+
+.transaction-item__info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.transaction-item__tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 1rem;
+}
+
+.transaction-item__amount {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+.mono {
+  font-family: "Roboto Mono", monospace;
+}
+.positive {
+  color: green;
+}
+.negative {
+  color: red;
+}
+.group-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.group-name {
+  color: black;
+}
+
+.group-amount {
+  color: green;
+}
+
+
+.transaction-item__edit {
+  margin-left: 10px; 
+  padding-left: 10px; 
+}
+.container-header {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 20px;
+}
+
+.ui.basic.buttons {
+  display: flex;
+}
+
+.ui.button > .icon:not(.button) {
+  margin: 0;
+}
+.transaction-item__edit button {
+  background-color: transparent;
+  border: 1px solid rgb(231, 226, 226);
+  border-radius: 50%;
+  padding: 0;
+  height: 2rem;
+  width:2rem;
+}
+
+.ui.icon.left.labeled.button {
+  background-color: #2185d0;
+  color: white;
+}
+
+.ui.icon.left.labeled.button:hover {
+  background-color: #1678c2;
+}
+
+.ui.icon.left.labeled.button:focus {
+  box-shadow: 0 0 0 1px #2185d0 inset, 0 0 0 0 rgba(34, 36, 38, 0.35) inset, 0 0 0 0 transparent;
+}
+
+.ui.icon.left.labeled.button:active {
+  background-color: #1678c2;
+  box-shadow: 0 0 0 0 transparent inset, 0 0 0 0 transparent;
+}
+.ui.bottom.attached.segment {
+  margin-bottom: 20px;
+}
+
+.ui.form.transaction-form {
+  padding: 20px;
+}
+
+.eleven.wide.field.mobile-with-margin {
+  width: 75%;
+}
+
+.five.wide.field.mobile-with-margin.input-right.no-label {
+  width: 25%;
+}
+
+.ui.multiple.search.selection.dropdown {
+  margin-top: 10px;
+}
+.ui.fluid.input {
+  width: 100%;
+}
+
+.ui.fluid.primary.button {
+  margin-top: 10px;
+  background-color: #2185d0;
+  color: #fff;
+  border-radius: 0;
+  border: none;
+}
+
+.ui.fluid.primary.button:hover {
+  background-color: #1678c2;
+  color: #fff;
+}
+.list-item:hover {
+  background-color: #f9f9f9;
+}
+
+.list-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-header {
+  font-size: 20px;
+}
+
+.list-description {
+  margin-top: 5px;
+  font-size: 16px;
+  color: #666;
+}
+
+.icon-pencil {
+  color: #666;
+  cursor: pointer;
+}
+.transactions-list__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.transaction-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 100%;
+
+  border-bottom: 1px dotted #d4d4d5;
+}
+
+.transaction-item__date {
+  text-align: center;
+  flex: 1 1;
+  white-space: nowrap;
+  color: #7c7c7d;
+}
+.recent-trans-container {
+  max-width: 1000px;
+}
+.custom-badge {
+  display: inline-block;
+  line-height: 1;
+  vertical-align: initial;
+  margin: 0 0.14285714em;
+  background-color: #e8e8e8 !important;
+  background-image: none;
+  padding: 0.5833em 0.833em;
+  color: rgba(0, 0, 0, 0.6);
+  text-transform: none;
+  font-weight: 700;
+  border: 0 solid transparent;
+  border-radius: 0.28571429rem;
+}
+
+.transaction-item__info-wrapper {
+  flex-basis: calc(100% - 270px);
+}
+
+.transaction-item__info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.transaction-item__note {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.transaction-item__amount {
+  flex-basis: 120px;
+  text-align: right;
+}
+
+.mono {
+  font-family: "Roboto Mono", monospace;
+}
+
+.positive {
+  color: green;
+}
+
+.negative {
+  color: red;
+}
+
+.transaction-item__edit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  width: 46.5px;
+  height: 36px;
+  
+}
+
+.transaction-item__edit button {
+  background-color: transparent;
+  border: 1px solid rgb(231, 226, 226);
+  border-radius: 50%;
+  padding: 0;
+  height: 2rem;
+  width:2rem;
+}
+
+.transaction-item__edit button:focus {
+  outline: none;
+}
+.recent-trans-container {
+  padding: 1rem;
+}
+
+.transaction-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.transaction-item__date {
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+.transaction-item__account {
+  margin-right: 1rem;
+}
+
+.transaction-item__amount {
+  font-weight: bold;
+}
+
+.transaction-item__buttons {
+  display: flex;
+  align-items: center;
+}
+
+.transaction-item__button {
+  margin-right: 0.5rem;
+}
+
+.transaction-item__label {
+  margin-right: 1rem;
+}
+.recent-trans-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.ui-form-field {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+.account-info {
+  display: flex;
+  font-size: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.account-info h3 {
+  margin-right: 250px;
+  cursor: pointer;
+}
+.group-name {
+  float: left;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.group-balance {
+  float: right;
+  font-size: 1rem;
+  font-weight: bold;
+  color: green;
+}
+
