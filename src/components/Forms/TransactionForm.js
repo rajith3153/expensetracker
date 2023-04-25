@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 
 function TestView({ transaction }) {
+
   const [accounts, setAccounts] = useState([]);
   const [transactionTypes, setTransactionTypes] = useState([]);
   const [tagOptions, setTagOptions] = useState([]);
@@ -167,48 +168,49 @@ function TestView({ transaction }) {
         <div className="mb-3 mt-md-4" style={{ position: "relative" }}>
           <div className="mb-3" style={{ textAlign: "left" }}>
             <Form onSubmit={handleSubmit}>
-              <div className="ui attached three item menu">
-                <a
-                  href="#"
-                  className={`item ${
-                    formData.transaction_type === "EXPENSE" ? "active" : ""
-                  } red`}
-                  onClick={(e) => handleAnchorClick(e, "EXPENSE")}
-                >
-                  Expense
-                </a>
-                <a
-                  href="#"
-                  className={`item ${
-                    formData.transaction_type === "TRANSFER" ? "active" : ""
-                  } black`}
-                  onClick={(e) => handleAnchorClick(e, "TRANSFER")}
-                >
-                  Transfer
-                </a>
-                <a
-                  href="#"
-                  className={`item ${
-                    formData.transaction_type === "INCOME" ? "active" : ""
-                  } green`}
-                  onClick={(e) => handleAnchorClick(e, "INCOME")}
-                >
-                  Income
-                </a>
-              </div>
-              <div className="ui form">
-                <div className="fields">
-                  <div className="field">
-                    <label htmlFor="account">
+              <Form.Group controlId="transactionType">
+                <div className="ui top attached three item menu">
+                  <a
+                    className={`red item ${
+                      formData.transaction_type === "EXPENSE" ? "active" : ""
+                    }`}
+                    onClick={(e) => handleAnchorClick(e, "EXPENSE")}
+                  >
+                    Expense
+                  </a>
+                  <a
+                    className={`black item ${
+                      formData.transaction_type === "TRANSFER" ? "active" : ""
+                    }`}
+                    onClick={(e) => handleAnchorClick(e, "TRANSFER")}
+                  >
+                    Transfer
+                  </a>
+                  <a
+                    className={`green item ${
+                      formData.transaction_type === "INCOME" ? "active" : ""
+                    }`}
+                    onClick={(e) => handleAnchorClick(e, "INCOME")}
+                  >
+                    Income
+                  </a>
+                </div>
+              </Form.Group>
+              <div
+                style={{ display: "flex", flexDirection: "row", gap: "16px" }}
+              >
+                <div style={{ flex: 2 }}>
+                  <Form.Group controlId="account">
+                    <Form.Label>
                       {formData.transaction_type === "EXPENSE"
                         ? "From"
                         : formData.transaction_type === "INCOME"
                         ? "To"
                         : "From"}
                       :
-                    </label>
-                    <select
-                      id="account"
+                    </Form.Label>
+                    <Form.Control
+                      as="select"
                       name="account"
                       onChange={handleInputChange}
                       value={formData.account}
@@ -220,26 +222,30 @@ function TestView({ transaction }) {
                           {account.name} - {account.group}
                         </option>
                       ))}
-                    </select>
-                  </div>
-                  <div className="field">
-                    <label htmlFor="amount">Amount:</label>
-                    <input
-                      type="number"
-                      id="amount"
-                      name="amount"
-                      onChange={handleInputChange}
-                      value={formData.amount}
-                      required
-                    />
-                  </div>
+                    </Form.Control>
+                  </Form.Group>
                 </div>
-                <div className="fields">
-                  {formData.transaction_type === "TRANSFER" && (
-                    <div className="field">
-                      <label htmlFor="destination_account">To :</label>
-                      <select
-                        id="destination_account"
+                <Form.Group controlId="amount">
+                  <Form.Label>Amount:</Form.Label>
+                  <Form.Control
+                    type="number"
+                    name="amount"
+                    onChange={handleInputChange}
+                    value={formData.amount}
+                    required
+                  />
+                </Form.Group>
+              </div>
+
+              <div
+                style={{ display: "flex", flexDirection: "row", gap: "16px" }}
+              >
+                {formData.transaction_type === "TRANSFER" && (
+                  <div style={{ flex: 2 }}>
+                    <Form.Group controlId="destination_account">
+                      <Form.Label>To :</Form.Label>
+                      <Form.Control
+                        as="select"
                         name="destination_account"
                         onChange={handleInputChange}
                         value={formData.destination_account}
@@ -251,52 +257,68 @@ function TestView({ transaction }) {
                             {account.name} - {account.group}
                           </option>
                         ))}
-                      </select>
-                    </div>
-                  )}
-                  {formData.transaction_type !== "TRANSFER" && (
-                    <div className="field">
-                      <label htmlFor="tags">Tags:</label>
+                      </Form.Control>
+                    </Form.Group>
+                  </div>
+                )}
+                {formData.transaction_type !== "TRANSFER" && (
+                  <div style={{ flex: 2 }}>
+                    <Form.Group controlId="tags">
+                      <Form.Label>Tags:</Form.Label>
                       <CreatableSelect
                         isMulti
                         options={tagOptions}
                         onChange={handleTagChange}
                         value={selectedTags}
                       />
-                    </div>
-                  )}
-                  <div className="field">
-                    <label htmlFor="date">Date:</label>
-                    <input
+                    </Form.Group>
+                  </div>
+                )}
+                <div style={{ flex: 1 }}>
+                  <Form.Group controlId="date">
+                    <Form.Label>Date:</Form.Label>
+                    <Form.Control
                       type="date"
-                      id="date"
                       name="date"
                       onChange={handleInputChange}
                       value={formData.date}
                       required
                     />
-                  </div>
+                  </Form.Group>
                 </div>
-
-                <div className="field">
-                  <label htmlFor="note">Note:</label>
-                  <textarea
-                    id="note"
-                    name="note"
-                    onChange={handleInputChange}
-                    value={formData.note}
-                  />
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  alignItems: "flex-end",
+                  width: "100%",
+                }}
+              >
+                <div style={{ flex: 2, marginRight: 16 }}>
+                  <Form.Group controlId="note">
+                    <Form.Label>Note:</Form.Label>
+                    <Form.Control
+                      as="textarea"
+                      name="note"
+                      onChange={handleInputChange}
+                      value={formData.note}
+                    />
+                  </Form.Group>
                 </div>
-
-                <Button type="submit" className="ui primary button">
-                  {isEditMode
-                    ? "Update"
-                    : (formData.transaction_type === "EXPENSE" &&
-                        "Add Expense") ||
-                      (formData.transaction_type === "INCOME" &&
-                        "Add Income") ||
-                      (formData.transaction_type === "TRANSFER" && "Transfer")}
-                </Button>
+                <div style={{ flex: 0.5 }}>
+                  <Button type="submit" className="ui fluid primary button">
+                    {isEditMode
+                      ? "Update"
+                      : (formData.transaction_type === "EXPENSE" &&
+                          "Add Expense") ||
+                        (formData.transaction_type === "INCOME" &&
+                          "Add Income") ||
+                        (formData.transaction_type === "TRANSFER" &&
+                          "Add Transfer")}
+                  </Button>
+                </div>
               </div>
             </Form>
           </div>

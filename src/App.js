@@ -8,6 +8,7 @@ import Account from './components/Accounts/AccountList.js';
 import TransactionForm from './components/Forms/TransactionForm';
 import RecentTransactions from './components/Transactions/RecentTransactions';
 import Settings from './components/Settings/Settings';
+
 const App = () => {
   return (
     <div>
@@ -20,7 +21,6 @@ const App = () => {
           <Route path="reports" element={<Reports/>} />
           <Route path="Account" element={<Account/>} />
           <Route path="settings" element={<Settings/>} />
-
         </Route>
       </Routes>
     </BrowserRouter>

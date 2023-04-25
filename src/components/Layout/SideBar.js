@@ -4,12 +4,11 @@ import {
   FaExchangeAlt,
   FaCreditCard,
   FaChartLine,
-  FaSyncAlt,
   FaCog,
 } from "react-icons/fa";
 import "../style.css";
 
-function Sidebar({ currentPage, handleRefresh }) {
+function Sidebar({ currentPage }) {
   return (
     <nav
       className="navbar bg-light position-fixed border h-100 flex-column align-items-start mt-5 sticky-top"
@@ -69,11 +68,6 @@ function Sidebar({ currentPage, handleRefresh }) {
           <FaCog />
           <br />
           Settings
-        </a>
-        <a onClick={handleRefresh} className="nav-link pb-3 text-center">
-          <FaSyncAlt />
-          <br />
-          Refresh
         </a>
       </div>
     </nav>

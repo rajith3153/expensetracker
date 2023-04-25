@@ -59,6 +59,7 @@ function RecentTransactions({ showFilterForm = true, showEditIcon = true } ) {
         console.log(error);
       });
   }, [accounts]);
+  
   const formatDate = (date) => {
     const options = { day: "numeric", month: "short" };
     return new Date(date).toLocaleDateString("en-US", options);

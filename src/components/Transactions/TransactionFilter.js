@@ -188,17 +188,7 @@ function TransactionFilterForm({ onSubmit }) {
             classNamePrefix="select"
           />
         </Form.Group>
-        <Form.Group controlId="formAccounts">
-          <Form.Label>Accounts</Form.Label>
-          <Select
-            options={accounts}
-            value={selectedAccount}
-            onChange={handleAccountsChange}
-            placeholder="Select accounts"
-            className="basic-multi-select"
-            classNamePrefix="select"
-          />
-        </Form.Group>
+        
         <Form.Group controlId="formTransactionType">
           <Form.Label>Transaction type</Form.Label>
           <br />

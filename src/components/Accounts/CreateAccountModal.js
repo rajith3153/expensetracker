@@ -3,10 +3,10 @@ import { Button, Checkbox, Form, Modal , Icon} from "semantic-ui-react";
 import "../style.css";
 import axios from "axios";
 
-const CreateAccount = () => {
-  const [name, setName] = useState("");
-  const [group, setGroup] = useState("");
-  const [balance, setBalance] = useState("");
+function CreateAccount({ account }) {
+  const [name, setName] = useState(account?.name || "");
+  const [group, setGroup] = useState(account?.group || "");
+  const [balance, setBalance] = useState(account?.balance || "");
   const [modalOpen, setModalOpen] = useState(false);
 
   const namehandler = (event) => {

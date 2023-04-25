@@ -32,14 +32,11 @@ function Layout() {
     setCurrentPage(name);
   }, [location]);
 
-  const handleRefresh = () => {
-    window.location.reload();
-  };
 
   return (
     <div>
-      <Sidebar currentPage={currentPage} handleRefresh={handleRefresh} />
-      <Topbar currentPage={currentPage} handleRefresh={handleRefresh} />
+      <Sidebar currentPage={currentPage} />
+      <Topbar currentPage={currentPage} />
       <div style={{ marginLeft: "150px" }}>
         <Outlet />
       </div>

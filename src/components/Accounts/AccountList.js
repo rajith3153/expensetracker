@@ -37,14 +37,13 @@ function Account() {
     groups[account.group].push(account);
     return groups;
   }, {});
-
+  const [state, setState] = useState({ activeIndex: -1 });
   const handleAccordionClick = (event, index) => {
     const { activeIndex } = state;
     const newIndex = activeIndex === index ? -1 : index;
     setState({ activeIndex: newIndex });
   };
-
-  const [state, setState] = useState({ activeIndex: -1 });
+  
   return (
     <Container className="new-expense-container">
       <br></br>
